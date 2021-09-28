@@ -1,5 +1,0 @@
-com\zkzy\portal\common\Listener\LicenseListener.class
-com\zkzy\portal\common\controller\LicenseAuth.class
-com\zkzy\portal\common\controller\Encrpt.class
-com\zkzy\portal\common\controller\FileUtil.class
-com\zkzy\portal\common\Filter\LicenseTimeTask.class
