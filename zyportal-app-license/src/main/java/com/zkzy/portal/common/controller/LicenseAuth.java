@@ -157,15 +157,7 @@ public class LicenseAuth {
 
     private static String getMac() {
         try {
-      /*      Enumeration<NetworkInterface> el = NetworkInterface
-                    .getNetworkInterfaces();
-            while (el.hasMoreElements()) {
-                byte[] mac = el.nextElement().getHardwareAddress();
-                if (mac == null)
-                    continue;
-                String hexstr = bytesToHexString(mac);
-                return getSplitString(hexstr, "-", 2).toUpperCase();
-            }*/
+
             return appid;
         } catch (Exception exception) {
             exception.printStackTrace();
@@ -173,30 +165,7 @@ public class LicenseAuth {
         return null;
     }
 
-/*    public static void getLicense(String isNoTimeLimit, String licenseLimit, String machineCode, String licensePath) throws Exception {
-        String[] liccontent = {
-                "LICENSEID=sy@zy-iot.com",
-                "LICENSENAME=zkzylicense",
-                MessageFormat.format("LICENSETYPE={0}", isNoTimeLimit),
-                MessageFormat.format("EXPIREDAY={0}", licenseLimit), //日期采用yyyy-MM-dd日期格式
-                MessageFormat.format("MACHINECODE={0}", machineCode),
-                ""
-        };
 
-        //将lic内容进行混合签名并写入内容
-        StringBuilder sign = new StringBuilder();
-        for (String item : liccontent) {
-            sign.append(item + "zkzylog");
-        }
-        liccontent[5] = MessageFormat.format("LICENSESIGN={0}", Encrpt.GetMD5Code(sign.toString()));
-        FileUtil.createFileAndWriteLines(licensePath, liccontent);
-        //将写入的内容整体加密替换
-        String filecontent = FileUtil.readFileToString(licensePath);
-        String encrptfilecontent = Encrpt.EncriptWRSA_Pri(filecontent);
-        File file = new File(licensePath);
-        file.delete();
-        FileUtil.createFile(licensePath, encrptfilecontent);
-    }*/
 
     public static boolean authLicense() {
         boolean isauth = false;
